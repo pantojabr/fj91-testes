@@ -29,7 +29,9 @@
 			
 			<div class="form-group">
 				<label for="dataDeAdmissao">Data de Admissão</label>
-				<input id="dataDeAdmissao" name="dataDeAdmissao" class="form-control" required="required" value="${funcionario.dataDeAdmissao}">
+				<fmt:parseDate value="${funcionario.dataDeAdmissao}" pattern="yyyy-MM-dd" var="parse" />
+				<fmt:formatDate value="${parse}" pattern="dd/MM/yyyy" var="formatada" />
+				<input id="dataDeAdmissao" name="dataDeAdmissao" class="form-control" required="required" value="${formatada}">
 			</div>
 			
 			<input type="submit" value="Gravar" class="btn btn-primary">
